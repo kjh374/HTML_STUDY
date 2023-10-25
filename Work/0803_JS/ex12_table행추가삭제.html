@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #t1{
+            width: 300px; 
+            border-collapse: collapse;
+        
+        }
+        #t1 th, #t1 td{
+            border: 1px solid black;
+            padding: 4px;
+        }
+        #t1 caption{
+            text-indent: -9999px;
+            height: 0;
+        }
+        #t1 thead>tr:first-child>td{ 
+            text-align: right;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>테이블 행 추가</h2>
+
+    <form>
+        <label for="s_name">이름</label>
+        <input type="text" id="s_name" name="u_name">
+        <br/> 
+        <label for="s_phone">연락처</label>
+        <input type="text" id="s_phone" name="u_phone">
+        <br/> 
+        <input type="button" value="확인" onclick="addRow()"/>
+        <!-- 위 버튼을 클릭할 때 사용자가 입력한 이름과 연락처들을 가지고 아래의 table에 행으로 추가하고 싶다. -->
+    </form>
+
+    <table id="t1" >
+        <caption>행 추가 테이블</caption>
+        <thead>
+            <tr>
+                <td colspan="4">
+                    <input type="button" value="추가" onclick="addRow()">
+                </td>
+            </tr>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>연락처</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <script>
+
+        let idx = 0;
+        let name = document.getElementById("s_name");
+        let phone = document.getElementById("s_phone");
+        let table = document.getElementById("t1"); 
+
+        function addRow(){
+           
+            let td1 = document.createElement("td"); 
+            td1.innerText = ++idx; 
+
+            let td2 = document.createElement("td");
+            td2.innerText = name.value; 
+         
+            let td3 = document.createElement("td");
+            td3.innerText = phone.value; 
+
+            let td4 = document.createElement("td");
+
+            // 4번째 td에 들어갈 버튼객체를 생성한다.
+            // let bt = document.createElement("button");
+            // bt.innerText = "삭제" // <button>삭제</button>
+            // bt.type = "button"; // <button type="button">삭제</button>
+            
+            let bt = document.createElement("input"); //<input/>
+            bt.type = "button"; // <input type="button"/>
+            bt.value = "삭제" // <input type="button" value="삭제" />
+            bt.id = "btn"+idx; // <input type="button" value="삭제" id="btn1" />
+            td4.appendChild(bt);
+
+            bt.onclick = function(){
+                // table에 등록된 속성들 중 rowIdx값을 가지고
+                // 그 값에 해당된 행을 삭제한다.
+                table.deleteRow(table.rowIdx);
+            }
+            let tr = document.createElement("tr");
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3); 
+            tr.appendChild(td4);
+
+            tr.style.textAlign = "center";
+
+            
+            tr.onmousemove = function (){
+                //만들어진 tr 에만 이벤트가 적용된다.
+                // 익명함수 : 해당 tr에 마우스가 올라오면 수행한다.
+                // table에 rowIdx라는 변수를 만들어 현재 행의 번호를 저장한다.
+                table.rowIdx = this.rowIndex; // table 변수가 위에 있어야 사용할 수 있다.
+            }    
+
+            
+            let tbody = table.children[2];
+            tbody.appendChild(tr); 
+        }
+
+        
+    </script>
+</body>
+</html>

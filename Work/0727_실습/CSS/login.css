@@ -1,0 +1,113 @@
+@charset "UTF-8"; 
+
+#contents{ 
+    width: 970px;
+    height: auto; 
+    margin: auto;
+    padding-top: 30px;
+    /* border: 1px solid black; */
+}
+.login_area{
+    width: 750px;
+    height: 205px;
+    background: url(../images/login_bg.png) no-repeat;
+    margin: 80px auto;
+    padding: 20px 70px;
+    position: relative;
+    /* border: 1px solid red; */
+}
+.person_login{
+    display: inline-block;
+    width: 290px;
+    /* border: 1px solid blue; */
+}
+.company_login{
+    display: inline-block;
+    width: 290px;
+    /* border: 1px solid blue; */
+    position: absolute;
+    right: 70px;
+}
+.login{
+    padding: 15px 0;
+    position: relative;
+}
+.sub_title{ /* id가 우선이므로 id로 접근했으면 나머지도 id로 접근해야 됨. */ 
+    background: url(../images/sub_title.png) no-repeat;
+    text-indent: -9999px;
+}
+h1.tit01{
+    width: 132px;
+    height: 30px;
+    background-position: 0 -50px;
+}
+h2.title01{
+    width: 290px;
+    height: 75px;
+    background-position: 0 -80px;
+}
+h2.title02{
+    width: 290px;
+    height: 75px;
+    background-position: 0 -160px;
+}
+.login .input_area p label{
+    display: inline-block;
+    width: 55px;
+    background: url(../images/bult.png) no-repeat 0 -76px;
+    padding-left: 10px;
+}
+.login .input_area p{
+    padding: 3px 0;
+}
+.login .input_area p:nth-child(1){
+    padding-top: 0;
+}
+.login .input_area p input{
+    width: 110px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.btnArea_right{
+    display: inline-block;
+    /* border: 1px solid black; */
+    width: 86px;
+    height: 56px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+/* .login .input_area{
+    border-bottom: 2px solid #eee;
+    padding-bottom: 7px;
+    margin-bottom: 7px;
+} */
+.login_search{
+    position: relative;
+    border-top: 2px solid #efefef;
+    padding-top: 7px;
+    margin-top: 7px;
+    /* border: 3px solid black; */
+}
+.login_search input{
+    display: inline-block;
+    width: 10px;
+    margin: 5px;
+    /* border: 1px solid red; */
+}
+.login_search label{
+    display: inline-block;
+    width: 70px;
+    /* border: 1px solid black; */
+}
+.login_search .b_search{
+    display: inline-block;
+    width: 156px;
+    height: 27px;
+    background-position: -100px 0;
+    position: absolute;
+    right: 0;
+    /* border: 1px solid; */
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="버튼1" onclick="test1()"/>
+    <!-- 함수는 인식만 될 뿐, 수행은 호출될 때 이루어진다. 
+        호출된 곳으로 회귀하며, 수행된 것은 소멸된다. -->
+        <br/>
+        <button type="button" onclick="test2()">버튼2</button>
+        <br/>
+        <button type="button" onclick="test3(200, 10)">버튼3</button>
+    <script>
+
+        let a = 10; // 모든 변수는 숫자로 시작하면 아니된다. 
+        function test1(){ // 모든 함수는 숫자로 시작하면 아니된다. 
+            // 현재 화면에 a의 값을 출력하자!
+            document.write(a);
+        }
+        function test2(){ // { --- 영역 --- }
+            let b = 30; // 지역변수 선언
+            alert("a+b:"+(a+b)); //경고창 보여주기
+        } // 우선연산을 위해 괄호를 친다.
+
+        function test3(n1, n2){ // 15번행에서 클릭할 때 호출되는 함수
+            // 이때 전달되는 200이 n1에 대입되고,
+            // 10은 n2에 대입된다. 이들(n1,n2)은 지역변수다.
+            alert(n1+n2+a);
+        }
+    </script>
+</body>
+</html>

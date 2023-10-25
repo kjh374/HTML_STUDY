@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400" id="myCanvas" style="border: 1px solid black" >
+        현재 브라우저는 Canvas를 지원하지 않습니다.
+    </canvas>
+    <!-- <img src="images/tree.jpg" alt="" style="display: none;" id="img1"> -->
+    <script>
+        window.onload = function(){
+            // 무조건 수행하는 영역
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            if(ctx){ // 이거 안넣어도 되지 않아?
+               
+
+                // 버튼의 내부(선형 그라데이션) : 선형 방향 그라데이션 (!=line stroke)
+                let linearGradient = ctx.createLinearGradient(0, 342,0, 358); // 방향을 의미한다. y = 버튼 y
+                // let linearGradient = ctx.createLinearGradient(200,340, 200, 111);
+
+                linearGradient.addColorStop(0, "#999999");
+                linearGradient.addColorStop(0.4, "#525252");
+                linearGradient.addColorStop(1, "#888888");
+                
+                ctx.fillStyle = linearGradient;
+                ctx.beginPath();
+                ctx.arc(200, 350, 16, 0, Math.PI*2, false);
+                ctx.fill();
+
+                
+
+                ctx.drawImage(img, 110, 80, 180, 240);
+
+                
+            }
+        }
+    </script>
+</body>
+</html>

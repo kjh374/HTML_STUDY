@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+#contents{
+    width: 900px;
+    height: auto;
+    margin: auto;
+}
+
+h2.title03{
+    height: 20px;
+    width: 55px;
+    background-position: 0 -30px;
+    border-bottom: 3px solid #666;
+    margin-bottom: 10px;
+}
+h2.title04{
+    height: 20px;
+    width: 100px;
+    background-position: -55px -30px;
+    border-bottom: 3px solid #666;
+    margin-bottom: 10px;
+
+}
+.title_src span{
+    font-size: 12px;
+    font-family: sans-serif;
+
+}
+p.chk_area{
+    /* border: 1px solid red; */
+    text-align: right; /* 각각 left, right를 적용시키는 방법도 존재함. */
+} 
+.b_agree{
+    width: 100px;
+    height: 30px;
+    background-position: 0 -70px;
+}
+.b_noagree{
+    width: 130px;
+    height: 30px;
+    background-position: -100px -70px;
+}
+
+textarea.noresize{
+    resize: none;
+    background-color: #dedede;
+    pointer-events: none; /* 비활성화 */
+}

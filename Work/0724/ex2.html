@@ -1,0 +1,31 @@
+<!--
+    !를 입력한 후 Tab키를 누른다.(enter도 되는데?)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- meta 는 화면이 깨지지 않도록 도와주는 태그. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두번째 예제</title>
+</head>
+<body>
+    <h1>문단태그</h1>
+    <p>
+        p태그는  paragraph라는 의미를 가진 태그다.<br/><!--주석 : brake= br tag , mt tag: open/close 한번에-->
+        하나의 문단을 만들 때 사용된다. <br/>
+        문단의 정렬 그리고 배경색 등을 적용하거나 변경할 때 사용함.
+    </p><!-- p tag 는 블록레벨(줄바꿈 기능 보유)-->
+    <p>
+        링크태그인 a태그는 다른 문서 또는 다른 인터넷주소(URL)를 연결하는 태그다.
+        <br/>
+        a태그는 h1~h6태그와 다르게 <b style="color: red;">블록레벨</b><!--주석: b= bold-->이 아닌 <strong style="color: #aa00fa;">인라인레벨</strong>이다. <br/> <!--주석 : #두자리에서 앞, 뒤자리는 별개.-->
+        <p><a href="https://www.naver.com/">네이버</a></p><!--주석: 태그끼리 서로 엇갈리지 않도록--><!-- https : 경로의 보안 유지를 위한 프로토콜(통신규약(속된 규칙);수신호같은 것)-->
+        <p><a href="https://www.daum.net/">다음</a></p>
+    </p>
+    <div style="border: 1px solid #aaa;"><!--블록레벨: 너비, 높이 조정 가능 / 인라인레벨은 크기 조정 불가능 -->
+        div태그는 하나의 영역을 구별하고자 할 때 사용한다.
+        블록레벨이며 크기는 너비는 모두 차지하고 있으며, 높이는 내용의 높이만큼 차지한다. 
+    </div>
+
+</body>
+</html>

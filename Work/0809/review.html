@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex1 -->
+    <!-- <header>
+        <h1>
+            datalist연습
+        </h1>
+    </header>
+    <form action="test.jsp" method="post">    
+        <fieldset>
+            <legend>
+                datalist연습
+            </legend>
+            ㅣ<label for="s_id">Homepage:</label>
+            <input type="url" id="s_id" name="u_id" required list="s_list"/>
+            <datalist id="s_list">
+                <option value="https://www.google.com" label="Google"></option>
+                <option value="https://www.naver.com">Naver</option>
+                <option value="https://www.Daum.com">Daum</option>
+            </datalist>    
+            <input type="submit" value="보내기" />
+        </fieldset>
+    </form> -->
+    
+    <!-- ex2 -->
+    <!-- <form action="test.jsp" method="post">
+        <fieldset>
+            <legend>data연습</legend>
+            <label for="s_date">Date</label>
+            <input type="date" id="s_date" name="u_date"><br/>
+            <label for="s_time">Time</label>
+            <input type="time" id="s_time" name="u_time"><br/>
+            <label for="s_week">Week</label>
+            <input type="week" id="s_week" name="u_week"><br/>
+            <label for="s_email">Email</label>
+            <input type="email" id="s_email" name="u_email"><br/>
+            <label for="s_color">Color</label>
+            <input type="color" id="s_color" name="u_color"><br/>
+            <p><button type="submit">보내기</button></p>
+        </fieldset>
+    </form> -->
+    <!-- ex3 -->
+    <form action="test.jsp" method="post">
+        <fieldset>
+            <legend>Range연습</legend>
+            <label for="s_range">Range:</label>
+            <input type="range" min="0" max="100" value="90" id="s_range" name="u_range">
+            <span>90</span>
+            <button>보내기</button>
+        </fieldset>
+    </form>
+    <script>
+        window.onload = function(){
+            
+        }
+    </script>
+
+    <!-- ex4 -->
+    <!-- <form action="test.jsp" method="post">
+        <legend>Progress연습</legend>
+        <label for="s_progress">Progress</label>
+        <progress value="0.05" max="1" id="s_progress" name="u_progress">
+            브라우저가 progress를 지원하지 않습니다.
+        </progress>
+        <span>5%</span>
+        <button type="submit">보내기</button>
+    </form>
+    
+    <script>
+        let inter = null;
+        window.onload = function(){
+            inter = setInterval("pGo()", 200);
+            
+            let pGo = function(){ 
+                // console.log("^^");
+                
+            }
+        }
+        
+    </script> -->
+    
+    <!-- ex5 -->
+    <!-- ex6 -->
+    <!-- ex7 -->
+    <!-- ex8 -->
+    <!-- ex9 -->
+    <!-- ex10 -->
+    <!-- ex11 -->
+    <!-- ex12 -->
+    <!-- ex13 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ex5 -->
+    <!-- <form>
+        <fieldset>
+            <legend>Progress연습</legend>
+            <label for="s1">Progress</label>
+            <progress id="s1" value="0.05" max="1">
+                브라우저가 progress를 지원하지 않습니다.
+            </progress>
+            <span>5%</span>
+            <button type="submit">보내기</button>
+        </fieldset>
+    </form>
+
+    <script>
+        let inter = null;
+        window.onload = function(){
+            
+            inter = setTimeout("pGo()", 500);
+        }
+        function pGo(){
+            let s1 = document.getElementById("s1");
+            let span = document.querySelector("form fieldset span");
+
+            s1.value = s1.value+0.05;
+            span.innerText = s1.value*100+"%";
+        }
+    </script> -->
+</body>
+</html>

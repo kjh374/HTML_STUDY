@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- ex1 -->
+    <canvas width="800px" height="500px" style="border: 1px solid black;">
+        이 브라우저는 canvas를 지원하지 않습니다.
+    </canvas>
+
+    <script>
+        let canvas = document.querySelector("canvas");
+        let ctx = canvas.getContext("2d");
+        if(ctx){
+            ctx.beginPath();
+            ctx.moveTo(100, 40);
+            ctx.quadraticCurveTo(100, 20, 120, 20);
+            ctx.lineTo(280, 20);
+            ctx.quadraticCurveTo(300, 20, 300, 40);
+            ctx.lineTo(300,360);
+            ctx.quadraticCurveTo(300, 380, 280, 380);
+            ctx.lineTo(120, 380);
+            ctx.quadraticCurveTo(100, 380, 100, 360);
+            ctx.closePath();
+            ctx.fillStyle = "rgba(1,1,1,1)"
+            ctx.fill();
+            // ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = "#555";
+            ctx.lineWidth = 7;
+            ctx.lineCap = "round"
+            ctx.moveTo(170,60);
+            ctx.lineTo(240,60);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.lineWidth = 1;
+            // ctx.strokeStyle = "gray"
+            ctx.arc(200, 340, 20, 0, Math.PI*2, false)
+            ctx.stroke();
+
+            let linearGradient = ctx.createLinearGradient(290,90, 0, 111);
+            linearGradient.addColorStop(0, "#ffffff");
+            linearGradient.addColorStop(0.4, "#222222");
+            linearGradient.addColorStop(1, "#888888");
+            ctx.fillStyle = linearGradient;
+
+            ctx.beginPath();
+            ctx.arc(200, 340, 17, 0, 2*Math.PI, false);
+            ctx.fill();
+
+
+
+            let img = document.createElement("img");
+            img.src = "images/tree.jpg";
+
+            // img.onload = function(){
+            //     let img_Elem = this;
+                setInterval(function(){
+                    ctx.drawImage(img, 110, 80, 180, 230);
+
+
+
+
+
+                }, 500)
+
+
+            // }
+
+            // ctx.drawImage(img, 200, 150, 80, 100);
+
+
+        }
+    </script>
+    <!-- ex2 -->
+
+    <!-- ex3 -->
+
+    <!-- ex4 -->
+
+</body>
+</html>

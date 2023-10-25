@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import "reset.css";
+
+.top_header{
+    width: 970px;
+    height: 300px;
+    margin: auto;
+}
+.top_header_head{
+    width: 181px;
+    height: 59px;
+    font-size: 0px; /* h1의 크기를 지정해주지 않으면 font-size를 따라간다. */
+    text-indent: -9999px;
+    background: url(../images/logo.png) no-repeat;
+    
+}
+.top_header_body{
+    width: 100%;
+    height: 50px;
+    border: 1px solid red;
+   
+}
+.top_header_body li{
+    display: inline-block;
+    width: 237px;
+    height: 100%;
+    background-color: #bbbbbb;
+    border: 1px solid green;
+    
+}
+.top_header_body>li>a{
+    display: block; 
+    height: 100%;
+    border: 1px solid blue;
+}
+.top_header_body span{
+    display: block; 
+    border: 1px solid red;
+    width: 100px;
+    height: 20px; 
+    color: white;
+    background: url(../images/gnb_bult.png) no-repeat;
+    font: bold 20px/1 sans-serif;
+    text-align: center;
+    margin: 15px auto ;
+    
+}
+.menu_01{
+    background-position: 0 0;
+}
+.menu_02{
+    background-position: 0 -22px;
+}
+.menu_03{
+    background-position: 0 -44px;
+}
+.menu_04{
+    background-position: 0 -66px;
+}

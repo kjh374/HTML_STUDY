@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul.container{
+            list-style: none;
+            padding: 0;
+            border: 1px solid red;
+            height: 120px;
+            margin: auto;
+            /*** flex 개념  ****/
+            display: flex;
+            flex-direction: row; /* 기본값 : 행배열 */
+            flex-wrap: nowrap; /* default: nowrap; // wrap: 자동 떨어뜨림; 모바일 등에 활용 */
+            /* justify-content: flex-start; 기본값 : 좌측정렬 */
+            /* justify-content: flex-end; 우측정렬 */
+            /* justify-content: center; 가운데 정렬 */
+            /* justify-content: space-between; 양 끝 기준 간격 */
+            /* justify-content: space-around; 가운데 기준 간격 */
+
+        }
+        li.item{
+            width: 80px;
+            height: 50px;
+            background-color: aquamarine;
+            text-align: center;
+            line-height: 50px;
+            /* display: inline-block; */
+            /* flex-grow: 1; 자식요소 간 비율 */
+            /* flex: 1; grow, shrink, basis 를 포함한다. */
+            /* min-height: 100; */
+            
+        }
+    </style>
+</head>
+<body>
+    <ul class="container"> <!-- ul.container>li.item{항목$}*5-->
+        <li class="item">항목1</li>
+        <li class="item">항목2</li>
+        <li class="item">항목3</li>
+        <li class="item">항목4</li>
+        <li class="item">항목5</li>
+    </ul>
+</body>
+</html>

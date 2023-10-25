@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #can1{
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Test</h1>
+    <canvas id="can1" width="600" height="300"></canvas>
+    <script>
+        window.onload = function(){
+            let mc = document.querySelector("#can1");
+            let ctx = mc.getContext("2d");
+            if(ctx){
+                ctx.strokeStyle = "#0f0"
+                ctx.fillStyle = "#f00"
+                ctx.lineWidth = 5;
+
+                ctx.beginPath();
+                
+                // arc(호의 중심점 x좌표, 호의 중심점 y좌표, 호의 반지름,
+                // 호의 시작 각도, 호의 끝 각도, 작도방향(시계방향:false; 반시계방향:true;));
+                ctx.arc(150, 150, 100, 1.5*Math.PI, 2*Math.PI, false) // 180의 1.5배; 3시 방향: 0도; 
+                ctx.stroke();
+                
+                let degrees = 173;
+                let radians = (Math.PI/180)*degrees; // π/180*degrees; radian 으로 변환한다. 
+                ctx.beginPath();
+                ctx.arc(480, 150, 100, 0, radians, ); // default: false; false가 생략된 경우
+                ctx.fill();
+                ctx.stroke();
+
+                // ctx.fillStyle = "#000";
+                // for(let i=400; i<=550; i++){
+                //     for(let j=180; j<220; j++){
+                //         ctx.fillRect(i,j,5, 5);
+                //         ctx.strokeRect;
+                //     }
+                // }
+            }
+
+
+        }
+    </script>
+</body>
+</html>

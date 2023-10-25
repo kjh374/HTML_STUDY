@@ -1,0 +1,68 @@
+자바의 실행구조:
+    ex1.java
+    javac ex1.java 알아서 저장해줌
+    ex1.class 기계어 jvm이 이해하는 언어 실행파일; 컴파일하면 알아서 생성됨 build폴더안에 생김.. 서버에 올리는 파일, 배포파일.
+    두 단계
+    war파일 =클래스파일만 압축파일 
+
+식별자: 이름
+class 명, variable 명(변수명), method 명(함수명) ...
+작명법: 숫자로 시작x. 공백x, 예약어(ex class)x, 자료형명(ex. int)x, 특수문자x($,_ 예외)
+
+
+class 설계도면; 얼마든지 재탕가능하다.
+class 내부에 변수, 함수가 존재한다.(주로 함수); 내부에 있는 애들을 멤버라고 부름.
+소문자로 시작, 괄호x = 변수
+괄호0 =  함수
+
+기본자료형
+    논리형/문자형/정수형/실수형;
+논리형
+    boolean 참/거짓
+    boolean b = true;
+문자형
+    char x = 'A'; (vs 문자열 string "")
+    char z = '0.1'; length = 3
+정수형
+    long> int> short> byte 보통 int라고 지정하면 무난하다.; 취향
+
+실수형
+double> float 보통 double이라고 지정하면 무난하다.
+
+main함수는 못바꿈.
+main 함수는 JVM이 자동으로 호출한다.
+수정하면 JVM이 main함수를 못찾아서호출을 못함. 오류발생.
+JVM이 호출했기 때문에 JVM으로 돌아간다.=프로그램이 끝났다.
+
+멤버변수..(=전역변수(c언어))
+    class car{
+        static string model;  멤버변수
+        string comp; 
+        public static void main(string[] arg){
+            string str = "abc"; 지역변수
+        } 
+        static에는 static으로 선언된 것만 직접 쓸 수 있음(static string model;)
+    }
+
+지역변수
+
+메모리는 jvm안에.
+메모리 구조
+    stack : 가벼운 변수가 생기는 곳;
+    Heap : 객체가 생기는 곳; 주로 class라고보는게 쉬울듯. Car {comp; model; }
+    static영역 : 서로 다른 객체가 동일한 reference를 공유한다.; 동일한 것은 하나만 생성할 수 있다. ; car.main; car.model; 
+
+class는 거의 절대적으로 여러개가 필요하다. 그러나
+main을 가지는 class는 단 한개이다. 
+jvm이 메인을 호출하는 게 시작. 비main포함 클래스 간 호출로 연결. 
+
+객체 자료형
+    car c1 = new car(); 객체생성
+    car c2 = new car(); 또 만들 수 있다. new: 또 새로만들어요
+
+git
+
+stack overflow's
+
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #box{
+            width: 300px;
+            height: 100px;
+            color: red;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 10PX;
+        }
+        /* #s_age{
+            width: 400px;
+        } */
+    </style>
+</head>
+<body>
+    <form method="post">
+
+        <label for="s_age">나이:</label>
+        <input type="text" id="s_age" name="u_age"/> <!-- br태그가 없으면 input 우측창에 커서반응 없음. -->
+        <button type="button" onclick="exe(this.form)">확인</button>
+        <!--
+            this는 표기된 해당 객체를 의미한다. 여기서는 <button....>이다.
+                그리고 this.form은
+            <button....>가 포함된 폼객체 전체를 의미한다. 즉,
+            exe함수를 호출할 때 인자로 폼전체를 전달한다.    
+        -->
+    </form>
+
+    <div id="box">
+
+    </div>
+
+    <script>
+
+        let box = document.getElementById("box");
+       
+        function exe(frm){
+            // 인자 frm은 폼이다. 그리고 폼 안에 있는 요소들을 접근할 때는 
+            // id가 아니라 name으로 접근해야 한다. 
+            // let a = parseInt(document.getElementById("s_age").value);
+            let age = parseInt(frm.u_age.value); // 취향 차이
+
+            let msg = "";
+
+            if(age >= 70)
+                msg = "노년";
+            else if(age >=60)
+                msg = "60대";
+            else if(age >=50)
+                box.innerHTML = "50대";
+            else if(age >=40)
+                msg = "40대";
+            else if(age >=30)
+                msg = "30대";
+            else if(age >=20)
+                msg = "20대";
+            else if(age >=10)
+                msg = "10대";
+            else
+                msg = "어린이 또는 유아";
+            
+            // if문을 나온 상태
+            box.innerText = msg; // 앞서 선언한 변수 msg에 if문에서 ""대신 새로이 입력된 "값"을 box에 출력한다.
+        }
+
+        
+        function test(){
+
+
+                let age = document.getElementById("s_age");
+            let ag_val = age.value;
+            // if(ag_val.trim().replace(/ /g,"a").length <= 2){
+            if(ag_val.replace(/ /g,"").length > 0){ // 내부 공백을 '가상으로' 지운다고 가정한다.
+                
+            let ag = parseInt(ag_val.replace(/ /g,"")); // 내부 공백을 '실제로' 지운다.
+
+                if( ag >= 90)
+                    box.innerText = "노년";
+                else if( ag >= 80)
+                    box.innerText = "80대입니다.";
+                else if( ag >= 70)
+                    box.innerText = "70대입니다.";
+                else if( ag >= 60)
+                    box.innerText = "60대입니다.";
+                else if( ag >= 50)
+                    box.innerText = "50대입니다.";
+                else if( ag >= 40)
+                    box.innerText = "40대입니다.";
+                else if( ag >= 30)
+                    box.innerText = "30대입니다.";
+                else if( ag >= 20)
+                    box.innerText = "20대입니다.";
+                else if( ag >= 10)
+                    box.innerText = "10대입니다.";
+                else
+                    box.innerText = "꼬마";
+            }else{
+                alert("잘못입력되었습니다. 다시 입력해주세요.");
+                age.value = "";
+                age.focus();
+            }
+
+        }
+
+    </script>
+</body>
+</html>

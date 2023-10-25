@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem_2</title>
+    <style>
+        .txt_c{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <table border="1" width="400" height="500">
+        <thead>
+            <ul>
+                <li style="font-weight: bold; font-size: 20px;">테이블 문제</li>
+                <h4>문제2</h4>
+            </ul>
+        </thead>
+        <tbody class="txt_c">
+            <tr>
+                <td rowspan="3">사진</td>
+                <td colspan="2">타이틀입니다.</td>
+            </tr>
+            <tr>
+                <td >데이터</td><!-- 1r 1c 데이터가 2r 1c 데이터를 포함하므로 2r 2c 부터 작성함. -->
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td rowspan="3" colspan="2"></td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

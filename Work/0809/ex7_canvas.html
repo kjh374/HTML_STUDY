@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #can1{
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Test</h1>
+    <canvas id="can1" width="400" height="300"></canvas>
+    <script>
+        window.onload = function(){
+            let mc = document.querySelector("#can1");
+            let ctx = mc.getContext("2d");
+            if(ctx){
+                ctx.fillStyle = "yellow";
+                ctx.strokeStyle = "#f00";
+                ctx.lineWidth = 10;
+
+                ctx.save(); // .save() : 지금까지 지정된 stx의 상태를 저장한다.
+//뭐가 의미가 없다공?>?!
+                ctx.fillRect(20, 20, 100, 125);
+                ctx.strokeRect(20, 20, 100, 125);
+                
+                ctx.strokeStyle = "blue";
+                ctx.fillStyle = "green";
+
+                ctx.fillRect(150, 20, 100, 125);
+                ctx.strokeRect(150, 20, 100, 125);
+                
+                // ctx.strokeStyle = "#f00";
+                // ctx.fillStyle = "yellow";
+
+                ctx.restore();// 앞서 저장된 ctx의 상태를 불러온다.
+
+                ctx.fillRect(285, 20, 100, 125);
+                ctx.strokeRect(285, 20, 100, 125);
+            }
+
+
+        }
+    </script>
+</body>
+</html>

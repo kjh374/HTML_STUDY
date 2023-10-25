@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <header>
+            <h2>테이블연습1</h2>
+        </header>
+        <p>
+            <table border="1" width="500">
+                <tr>
+                    <td>번호</td>
+                    <td>이름</td>
+                    <td>연락처</td>
+                    <td>이메일</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>마루치</td>
+                    <td>010-9751-9104</td>
+                    <td>adonis_oh@hanmail.net</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>아라치</td>
+                    <td>010-9985-9104</td>
+                    <td>ara@korea.com</td><!-- shift art 아래화살표 : 줄 복사 -->
+                </tr>
+                
+            </table>
+        </p>
+        <p>
+            <table border="1" width="500">
+                <tfoot><!-- tfoot : 테이블의 바닥글 ; 순서 상관 X-->
+                    <tr>
+                       <td colspan="4">출처:한국ICT협회</td>
+                    </tr>
+                </tfoot>
+                <thead><!-- thead : 테이블의 머릿글 ; 각 열명 -->
+                    <tr>
+                        <td>번호</td>
+                        <td>이름</td>
+                        <td>연락처</td>
+                        <td>이메일</td>
+                    </tr>
+                </thead>
+                <tbody><!-- tbody : 테이블의 데이터 -->
+                    <tr>
+                        <td>1</td>
+                        <td>마루치</td>
+                        <td>010-9751-9104</td>
+                        <td>adonis_oh@hanmail.net</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>아라치</td>
+                        <td>010-9985-9104</td>
+                        <td>ara@korea.com</td><!-- shift art 아래화살표 : 줄 복사 -->
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+        <p>
+            <table border="1" width="600" summary="회원목록테이블">
+                <colgroup><!-- colgorup : 열 그룹 --> <!-- 열 너비 같게는 어떻게 하지? -->
+                    <col width="80px">                
+                    <col width="80px">                
+                    <col width="130px">                
+                    <col width="150px">                
+                    <col width="*">                
+                </colgroup>
+                <caption>회원목록</caption><!-- caption : 표 제목 -->
+                <tfoot><!-- tfoot : 테이블의 바닥글 ; thead tbody tfoot 순서 상관 X-->
+                    <tr>
+                       <td colspan="5">출처:한국ICT협회</td><!-- colspan : 열 병합 -->
+                    </tr>
+                </tfoot>
+                <thead><!-- thead : 테이블의 머릿글 ; 각 열명 -->
+                    <tr>
+                        <th>이미지</th><!-- th : 가운데 맞춤, 굵은 글씨 --> 
+                        <th>번호</th><!-- th : 가운데 맞춤, 굵은 글씨 --> 
+                        <th>이름</th>
+                        <th>연락처</th>
+                        <th>이메일</th>
+                    </tr>
+                </thead>
+                <tbody><!-- tbody : 테이블의 데이터 -->
+                    <tr>
+                        <td><img src="images/d.png" width="20"/></td><!-- 상대경로 : 같은 폴더 내 이미지 / ../ : 현재 문서 기준 상위 폴더 -->
+                        <td>1</td>
+                        <td>마루치</td>
+                        <td>010-9751-9104</td>
+                        <td>adonis_oh@hanmail.net</td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/naver.png" width="20"/></td>
+                        <td>2</td>
+                        <td>아라치</td>
+                        <td>010-9985-9104</td>
+                        <td>ara@korea.com</td><!-- shift art 아래화살표 : 줄 복사 -->
+                    </tr>
+                </tbody>
+            </table>
+        </p>
+    </article>
+</body>
+</html>

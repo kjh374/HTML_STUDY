@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #t1{
+            border-collapse: collapse;
+            width: 300px;
+        }
+        #t1 td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table id="t1">
+        <colgroup>
+            <col width="200px">
+            <col width="*">
+        </colgroup>
+        <tbody>
+            <tr onmouseover="overTr(this)" onmouseout="outTr(this)"> <!-- this 라는 문구가 속한 태그를 의미한다. -->
+                <td>항목1</td>
+                <td>비고1</td>
+            </tr>
+            <tr onmouseover="overTr(this)" onmouseout="outTr(this)">
+                <td>항목1</td>
+                <td>비고1</td>
+            </tr>
+            <tr onmouseover="overTr(this)" onmouseout="outTr(this)">
+                <td>항목1</td>
+                <td>비고1</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // let overTr = function(){
+            function overTr(c_Tr){
+            // 해당 행(tr)의 배경색을 변경하고자 한다.
+            c_Tr.style.backgroundColor = "#aceeee";
+        }
+        function outTr(c_Tr){ // c_Tr 은 재사용할 수 있다.
+            c_Tr.style.backgroundColor = "#ffffff";
+        }
+    </script>
+</body>
+</html>

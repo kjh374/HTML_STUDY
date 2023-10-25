@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #t1{
+            width: 600px;
+            border-collapse: collapse;
+        }
+        #t1 td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery를 이용한 체크박스선택</h1>
+    <table id="t1">
+        <colgroup>
+            <col width="30px">
+            <col width="100px">
+            <col width="30px">
+            <col width="100px">
+            <col width="30px">
+            <col width="100px">
+            <col width="30px">
+            <col width="100px">
+        </colgroup>
+        <thead>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox"/>
+                    <em>전체선택</em><!-- emphasize 태그는 문장 내에서 강조하고 싶을 때 쓴다. (i태그와 Strong태그를 합친 것)-->
+                </td>
+                <td colspan="2">
+                    <input type="checkbox"/>
+                    <em>전체선택</em><!-- emphasize 태그는 문장 내에서 강조하고 싶을 때 쓴다. (i태그와 Strong태그를 합친 것)-->
+                </td>
+                <td colspan="2">
+                    <input type="checkbox"/>
+                    <em>전체선택</em><!-- emphasize 태그는 문장 내에서 강조하고 싶을 때 쓴다. (i태그와 Strong태그를 합친 것)-->
+                </td>
+                <td colspan="2">
+                    <input type="checkbox"/>
+                    <em>전체선택</em><!-- emphasize 태그는 문장 내에서 강조하고 싶을 때 쓴다. (i태그와 Strong태그를 합친 것)-->
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>제목1-1</td>
+                <td><input type="checkbox"/></td>
+                <td>제목1-2</td>
+                <td><input type="checkbox"/></td>
+                <td>제목1-3</td>
+                <td><input type="checkbox"/></td>
+                <td>제목1-4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>제목2-1</td>
+                <td><input type="checkbox"/></td>
+                <td>제목2-2</td>
+                <td><input type="checkbox"/></td>
+                <td>제목2-3</td>
+                <td><input type="checkbox"/></td>
+                <td>제목2-4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>제목3-1</td>
+                <td><input type="checkbox"/></td>
+                <td>제목3-2</td>
+                <td><input type="checkbox"/></td>
+                <td>제목3-3</td>
+                <td><input type="checkbox"/></td>
+                <td>제목3-4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>제목4-1</td>
+                <td><input type="checkbox"/></td>
+                <td>제목4-2</td>
+                <td><input type="checkbox"/></td>
+                <td>제목4-3</td>
+                <td><input type="checkbox"/></td>
+                <td>제목4-4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>제목5-1</td>
+                <td><input type="checkbox"/></td>
+                <td>제목5-2</td>
+                <td><input type="checkbox"/></td>
+                <td>제목5-3</td>
+                <td><input type="checkbox"/></td>
+                <td>제목5-4</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        // let ar0 = $("tbody :checkbox").eq();
+        // let table = document.getElementById("t1")
+        // // let ar = table.elements[1];
+        // let chk = $("thead>tr>td");
+        // let ar = $("tbody td");
+        $(function(){
+            // thead에 있는 checkbox 요소를 클릭할 때마다 수행하는 이벤트를 적용한다!
+            $("#t1>thead :checkbox").bind("click", function(){
+                // 선택된 checkbox의 index를 알아내야 한다.
+                let ar = $("#t1>thead :checkbox"); // 배열화한다.
+                // console.log($("t1>thead :checkbox").index(this)); // .index(this); 사기네..
+                // let idx = $("thead :checkbox").index(this); // 클릭한 체크박스
+                let idx = ar.index(this); // 사용자가 "Click한 checkbox"의 위치값(index);
+                let chk = this.checked; // 사용자가 클릭한 checkbox의 상태(true/false); 함수 나가기 전에 변수로 저장해두는 거구나.
+                
+                // tbody에 있는 tr들을 만날 때마다 수행한다.
+                $("#t1>tbody tr").each(function(){
+                    // 각 행에 존재하는 checkbox를 얻어야 한다.
+                    // tbody에 있는 tr들은 각각 자손으로 checkbox들을 가지고 있다. 
+                    // 해당 행의 체크박스들을 얻어낸다. 
+                    // let c_ar = $(this).find(":checkbox");
+                    // c_ar.eq(idx).prop("checked", chk);
+                    $(this).find(":checkbox").eq(idx).prop("checked", chk); // this로 이어준 상태에서 find로 찾는다.
+                    // console.log("tbody tr td :checkbox");
+                });
+            });
+            
+            
+            
+            
+            
+            
+            
+            // if(i= "0")
+            // for(let i=0; i<ar.length; i++)
+            //     for(let j=0; j<aj.length; j++)
+            //     $("thead :checkbox").eq(i).bind("click", function(){
+            //     ar.eq(i).find(":checkbox").prop("checked", this.checked);
+            //     })
+            //             $("thead td").eq(1).bind("click", function(){
+            //                 a1.prop("checked", this.eq(i).checked);
+            //             })
+            //             $("thead td").eq(2).bind("click", function(){
+            //                 ar.prop("checked", this.eq(i).checked);
+            //             })
+            //             $("thead td").eq(3).bind("click", function(){
+            //                 ar.prop("checked", this.eq(i).checked);
+            //             })
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* img태그들 모두에게 적용 */
+        img{    /* img 태그를 "선택"하겠다 (; element(요소) 선택자, 정말 많이 쓰여 매우 중요. ) 모두에 적용하겠다. 그냥 이름만 쓰며 되네? . : 클래스를 새롭게 정의하겠다. (; class 선택자)*/
+            width: 170px;
+            height: 100px;
+        }
+        td, th, .text{ /* td = 박스 *//* td, th : td or th 모두 적용, 여러개 적용 가능 */
+            width: 200px;
+            height: 150px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        table{
+            /*
+            border-spacing: 0px;
+            border: 0px;
+            */
+            border-collapse: collapse; /* border 속성 무시 */
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td><img src="images/00xp-northern-lights-fairbanks-lgqb-videoSixteenByNine3000.jpg"></td>
+                <td>항목1</td>
+                <td><img src="images/images (1).jpg"></td>
+            </tr>
+            <tr>
+                <td>항목2</td>
+                <td><img src="images/images (2).jpg"></td>
+                <td>항목3</td>
+            </tr>
+            <tr>
+                <td><img src="images/images (3).jpg"></td>
+                <td>항목4</td>
+                <td><img src="images/images.jpg"></td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>

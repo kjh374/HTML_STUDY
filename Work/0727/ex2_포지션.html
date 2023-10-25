@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션</title>
+    <style>
+        div#wrap{
+            border: 2px solid red;
+            width: 600px;
+            height: 350px;
+            margin: 30px auto;    
+            padding: 10px;     
+            position: absolute; 
+            /* 포지션(relative, absolute)이 있으면 하단 태그의 새로운 기준이 된다. */   
+        }
+
+        div#wrap>div{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            position: absolute; /* 절대적 위치(좌표) : 창 기준*/
+
+        }
+        div#box1{
+            background-color: red;
+            top: 20px;
+            left: 20px;
+        }
+        div#box2{
+            background-color: #0f0; /* 동일한 좌표에 있으면 이미 있으면 피해서 자리를 잡음 */
+            top: 20px;
+            right: 20px;
+        }
+        div#box3{
+            background-color: #00f;
+            bottom: 20px;
+            left: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            별표 출력하기
+            * * * *
+        */
+        // let i=1000;
+        // while(i<1004){
+        //     document.write("*&nbsp;"); // &nbsp;은 태그로 인식한다.
+        //     i++
+        // }
+        let i=0;
+        while(i<4){ // 외부 반복문은 주로 행 단위로 반복한다.
+            for(let k=0;k<4;k++){ // 내부 반복문은 주로 열 단위로 반복한다.
+            // for(let i=0; i<4; i++){
+                document.write("*&nbsp;");
+            }
+            
+            document.write("<br/>") // 행을 바꾼다.
+            i++
+        } // 바깥쪽 while의 끝
+    </script>
+</body>
+</html>

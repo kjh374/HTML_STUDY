@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #232323;
+        }
+
+        div#wrap {
+            color: #fff;
+            /* 왜 a태그는 색이 안바뀌지? */
+        }
+
+        div#wrap {
+            width: 700px;
+            margin: 50px;
+            border: 1px solid white;
+        }
+
+        div#wrap>h1 {
+            margin: 10px;
+            font: bold 35px sans-serif;
+        }
+
+        #carList {
+            /* width: 600px; */
+            /* height: ; */
+            list-style: none;
+            padding: 15px;
+            border: 1px solid #232323;
+            margin: 0;
+            background-color: #232323;
+
+        }
+
+        div#wrap>h1 {
+            margin-top: 10px;
+        }
+
+        li.carBox {
+            /* 클래스 선택자랑 요소 선택자 차이는 ? */
+            display: inline-block;
+            width: 160px;
+            height: 150px;
+            margin: 15px;
+            border: 1px solid #fff;
+            font-size: 0p;
+        }
+
+        #carList>span {
+            /* display: block; */
+            color: #fff;
+            border: 1px solid red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>자동차 목록</h1>
+        <ul id="carList">
+            <li class="carBox">
+                <a href="">
+                    <img src="./images/Audi-R8.jpg" alt="">
+                </a>
+                <span>
+                    <a href="">
+                        Audi-R8
+                    </a>
+                </span>
+            </li>
+            <li class="carBox">
+                <a href="">
+                <img src="./images/Aston_Martin-One-77.jpg" alt="">
+            </a>
+            <span>
+                <a href="">
+                    Aston_Martin-One-77
+                </a>
+            </span>
+            </li>
+            <li class="carBox">
+                <a href="">
+                <img src="./images/Jaguar-XJ.jpg" alt="">
+            </a>
+            <span>
+                <a href="">Jaguar-XJ
+                </a>
+            </span>
+            </li>
+            <li class="carBox">
+                <a href="">
+                    <img src="./images/BMW-Z4.jpg" alt="">
+                </a>
+                <span>
+                    <a href="">BMW-Z4</a>
+                </span>
+            </li>
+            <li class="carBox">
+                <a href="">
+                    <img src="./images/Bentley-Continental_GTC.jpg" alt="">
+                </a>
+            <span>
+                <a href="">Bentley-Continental_GTC</a>
+            </span>
+            </li>    
+            <li class="carBox">
+                <a href="">
+                    <img src="./images/Hyundai-Genesis.jpg" alt="">
+                </a>
+            <span>
+                <a href="">
+                    Hyundai-Genesis
+                </a>
+            </span>
+            </li>
+            <li class="carBox">
+                <a href="">
+                    <img src="./images/Lamborghini-Reventon.jpg" alt="">
+                </a>
+            <span>
+                <a href="">
+                    Lamborghini-Reventon
+                </a>
+            </span>
+            </li>
+            <li class="carBox">
+                <a href="">
+                    <img src="./images/Ferrari-458_Italia.jpg" alt="">
+                </a>
+            <span>
+                <a href="">
+                    Ferrari-458_Italia
+                </a>
+            </span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

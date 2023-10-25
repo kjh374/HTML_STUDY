@@ -1,0 +1,127 @@
+<!-- ex2 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            file API연습
+        </h1>
+    </header>
+    <h2>File API는</h2>
+    <section>HTML5에서 제공하는 기능 중 로컬에 저장된 파일을 읽을 때 사용하는 API이다.</section>
+    <form action="">
+        <input type="file" id="s_file"/>
+        <select name="" id="">
+            <option value="UTF-8"></option>
+            <option value="8859_1"></option>
+        </select>
+        <button type="button" onclick="readFile()">읽기</button><br/>
+        <span id="file_name">File Name</span>
+        <span id="file_size">File Size</span>
+    </form>
+    <div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <script>
+            // document.querySelector("button").onclick = function(){
+            function readFile(){
+                // // $("#file_name").textContext = document.querySelector(":file").name;
+                // $("file_name").innerText = $("input:file").files[0].name;
+                let file = document.getElementById("s_file").files[0];
+                document.getElementById("file_name").textContent = file.name;
+
+                // let file = document.getElementById("s_file").files[0]; // .files : 예약어; file태그를 가져온 것이 아니라 실제 사용자가 지정한 파일객체를 가져온 것이다. 
+            // document.getElementById("fileName").textContent = document.getElementById("s_file").value; (X)
+            // document.getElementById("fileName").innerText = file.name;
+            // document.getElementById("file_name").textContent = file.name;
+            // document.getElementById("fileSize").innerText = "("+file.size+")";
+
+            }
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+<!-- ex3 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outline{
+            width: 1000px;
+            /* height: 200px; */
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .w100{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <select name="">
+            <option value="brand">제조회사</option>
+            <option value="product_type">제품타입</option>
+            <option value="price_less_than">최고가격</option>
+        </select>
+        <input type="text">
+        <input type="button" value="검색">
+    </form>
+    <div class="outline">
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+
+        window.onload = function(){
+            $(":button").click(function(){
+                // let value = document.querySelector("input:text").value;
+                let value = $("input:text").val();
+                let select = $("select").val();
+                console.log(select);
+                
+                $.ajax({
+                    url: "https://makeup-api.herokuapp.com/api/v1/products.json",
+                    // data: {[`${select}`]:value},
+                    data: select+"="+value,
+                    type: "get",
+                    dataType: "json",
+                }).done(function(data){
+                    console.log(data);
+                    let view = "";
+                    for(let i=0; i<data.length; i++){
+                        view += "<div style='width:300px; height=300px;'>";
+                        view += "<img src='"+data[i].image_link+"'; class='w100'></img><br/>";
+                        view += "<span>제조회사:"+data[i].brand+"</span><br/>";
+                        view += "<span>$:"+data[i].price+"</span>";
+                        view += "</div>";
+                    }
+                    $("div.outline").append(view);
+                    // console.log(view);
+                })
+            })
+        }
+    </script>
+</body>
+</html>
+ -->

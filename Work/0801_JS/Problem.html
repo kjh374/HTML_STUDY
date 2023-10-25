@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 300px;
+            border: 1px solid red;
+            line-height: 300px;
+            text-align: center;
+            color: red;
+            font-size: 80px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post">
+        <label for="scr">점수:</label>
+        <input type="text" id="scr" name="u_scr"/><br/>
+        <button type="button" onclick="exe()">확인</button>
+   
+    </form>
+    <div id="box">
+
+    </div>
+
+    <script>
+
+        let box = document.getElementById("box");
+        function exe(){
+            //현재문서에서 아이디가 score인 요소의 값(value)을 얻어내야 한다.
+            // let s_val = document.getElementById("scr").value; id에 접근하고자 하면 이 방법은 다소 적절하지 않음.
+            let sc = document.getElementById("scr");
+            let sc_val = sc.value; // scr의 값(문자열)
+
+            /*
+                scr의 값이 95점 이상이면 "A+",
+                그렇지 않고 90~94이면 "A",
+                그렇지 않고 85~89이면 "B+",
+                그렇지 않고 80~84이면 "B",
+                그렇지 않고 75~79이면 "C+",
+                그렇지 않고 70~74이면 "C",
+                그렇지 않고 65~69이면 "D",
+                그 이하는 "재시"
+            */
+           //if(sc_val != ""){ // 공백을 입력했을 때는 비교할 수 없다.
+            // if(sc_val.trim().length > 0){
+            if(sc_val.trim().replace(/ /g,"a").length <= 2){
+            //비교연산을 하기 위해 sc_val을 정수로 변환하자!
+            let score = parseInt(sc_val);
+
+                if(score >= 95)
+                    box.innerText = "A+";
+                // else if(score >= 90 && score <= 94)
+                else if(score >= 90)
+                    box.innerText = "A-";
+                else if(score >= 85)
+                    box.innerText = "B+";
+                else if(score >= 80)
+                    box.innerText = "B-";
+                else if(score >= 75)
+                    box.innerText = "C+";
+                else if(score >= 70)
+                    box.innerText = "C-";
+                else if(score >= 65)
+                    box.innerText = "D";
+                else // 0~64
+                    box.innerText = "재시"
+            }else{
+                // 점수를 입력하지 않았을 때
+                alert("점수를 입력하세요");
+                sc.value = ""; // 점수 입력란에 들어가있던 값을 변경!
+                sc.focus();
+            }
+        }
+        //95 a+ 90 a- 85 b+ 80 b- 75 c+ 70 c- 65 d 나가!
+        function test(){ // function은 인식만 될 뿐, 수행되지 않으므로 굳이 주석할 필요가 없다.
+            let score = document.getElementById("scr").value;
+        let scr = parseInt(score);
+        let box = document.getElementById("box");
+        if(scr >= 95){
+            box.innerHTML = "<span style= 'color:red; font-size:300px; text-align: center;'>A+<span>";
+        }
+        else if(scr < 95 && scr >=90){
+            box.innerHTML = "<span style= 'color:orange; font-size:200px; text-align: center;'>A<span>";
+        }
+        else if(scr < 90 && scr >=85){
+            box.innerHTML = "<span style= 'color:yellow; font-size:200px; text-align: center;'>B+<span>";
+        }
+        else if(scr < 85 && scr >=80){
+            box.innerHTML = "<span style= 'color:green; font-size:200px; text-align: center;'>B<span>";
+        }
+        else if(scr < 80 && scr >=75){
+            box.innerHTML = "<span style= 'color:indigo; font-size:200px; text-align: center;'>C+<span>";
+        }
+        else if(scr < 75 && scr >=70){
+            box.innerHTML = "<span style= 'color:aliceblue; font-size:200px; text-align: center;'>C<span>";
+        }
+        else if(scr < 70 && scr >=65){
+            box.innerHTML = "<span style= 'color:gray; font-size:200px; text-align: center;;'>D<span>";
+        }
+        else{
+            box.innerHTML = "<span style= 'color:red; font-size:400px; text-align: center;'>나가!<span>"
+        }
+
+
+
+        }
+    </script>
+</body>
+</html>
